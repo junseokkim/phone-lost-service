@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: phonerental
+  labels:
+    app: phonerental
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: phonerental
+  template:
+    metadata:
+      labels:
+        app: phonerental
+    spec:
+      containers:
+        - name: phonerental
+          image: "username/phonerental:latest"
+          ports:
+            - containerPort: 8080
+          readinessProbe:
+            httpGet:
+              path: '/actuator/health'
+              port: 8080
+            initialDelaySeconds: 10
+            timeoutSeconds: 2
+            periodSeconds: 5
+            failureThreshold: 10
+          livenessProbe:
+            httpGet:
+              path: '/actuator/health'
+              port: 8080
+            initialDelaySeconds: 120
+            timeoutSeconds: 2
+            periodSeconds: 5
+            failureThreshold: 5
