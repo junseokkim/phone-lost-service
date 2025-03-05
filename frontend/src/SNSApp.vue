@@ -122,6 +122,16 @@
                     >
                         USIM 차단
                     </v-list-item>
+                    <v-list-item
+                        class="px-2"
+                        key="본인기기Imei차단정보조회"
+                        to="/servicemanagements/본인기기Imei차단정보조회"
+                        @click="changeUrl()"
+                        color="primary"
+                        style="font-weight:700;"
+                    >
+                        본인기기Imei차단정보조회
+                    </v-list-item>
                 </v-list>
             </v-navigation-drawer>
         </div>
@@ -238,6 +248,13 @@ export default {
                 description: 'InqurySelfPhone을 관리하는 화면입니다.', 
                 key: 'inqurySelfPhones', 
                 route: '/phonemanagements/inqurySelfPhones',
+                ImageUrl: '',
+            },
+            { 
+                title: '본인기기Imei차단정보조회', 
+                description: '본인 기기 IMEI 차단 정보 조회을 관리하는 화면입니다.', 
+                key: '본인기기Imei차단정보조회', 
+                route: '/servicemanagements/본인기기Imei차단정보조회',
                 ImageUrl: '',
             },
             
