@@ -74,5 +74,68 @@ public class Device {
         );
         return deviceRepository;
     }
+
+    //<<< Clean Arch / Port Method
+    public static void changeDeviceStatusLost(
+        LostReportReceived lostReportReceived
+    ) {
+        //implement business logic here:
+
+        /** Example 1:  new item 
+        Device device = new Device();
+        repository().save(device);
+
+        DeviceStatusChangedToLost deviceStatusChangedToLost = new DeviceStatusChangedToLost(device);
+        deviceStatusChangedToLost.publishAfterCommit();
+        */
+
+        /** Example 2:  finding and process
+        
+
+        repository().findById(lostReportReceived.get???()).ifPresent(device->{
+            
+            device // do something
+            repository().save(device);
+
+            DeviceStatusChangedToLost deviceStatusChangedToLost = new DeviceStatusChangedToLost(device);
+            deviceStatusChangedToLost.publishAfterCommit();
+
+         });
+        */
+
+    }
+
+    //>>> Clean Arch / Port Method
+    //<<< Clean Arch / Port Method
+    public static void changeDeviceStatusNormal(
+        LostReportCancelled lostReportCancelled
+    ) {
+        //implement business logic here:
+
+        /** Example 1:  new item 
+        Device device = new Device();
+        repository().save(device);
+
+        DeviceStatusChangedToNormal deviceStatusChangedToNormal = new DeviceStatusChangedToNormal(device);
+        deviceStatusChangedToNormal.publishAfterCommit();
+        */
+
+        /** Example 2:  finding and process
+        
+
+        repository().findById(lostReportCancelled.get???()).ifPresent(device->{
+            
+            device // do something
+            repository().save(device);
+
+            DeviceStatusChangedToNormal deviceStatusChangedToNormal = new DeviceStatusChangedToNormal(device);
+            deviceStatusChangedToNormal.publishAfterCommit();
+
+         });
+        */
+
+    }
+    //>>> Clean Arch / Port Method
+
 }
 //>>> DDD / Aggregate Root

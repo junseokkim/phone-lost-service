@@ -31,26 +31,8 @@ public class LostPhoneReport {
 
     @PostPersist
     public void onPostPersist() {
-        //Following code causes dependency to external APIs
-        // it is NOT A GOOD PRACTICE. instead, Event-Policy mapping is recommended.
-
-        phonelostservice.external.Device device = new phonelostservice.external.Device();
-        // mappings goes here
-        LostphonereportApplication.applicationContext
-            .getBean(phonelostservice.external.DeviceService.class)
-            .changeDeviceStatusLost(device);
-
         LostReportReceived lostReportReceived = new LostReportReceived(this);
         lostReportReceived.publishAfterCommit();
-
-        //Following code causes dependency to external APIs
-        // it is NOT A GOOD PRACTICE. instead, Event-Policy mapping is recommended.
-
-        phonelostservice.external.Device device = new phonelostservice.external.Device();
-        // mappings goes here
-        LostphonereportApplication.applicationContext
-            .getBean(phonelostservice.external.DeviceService.class)
-            .changeDeviceStatusNormal(device);
 
         LostReportCancelled lostReportCancelled = new LostReportCancelled(this);
         lostReportCancelled.publishAfterCommit();

@@ -53,20 +53,6 @@
                 <v-btn
                     color="primary"
                     text
-                    @click="save"
-                >
-                    휴대폰 분실 상태 변경
-                </v-btn>
-                <v-btn
-                    color="primary"
-                    text
-                    @click="save"
-                >
-                    휴대폰 정상 상태 변경
-                </v-btn>
-                <v-btn
-                    color="primary"
-                    text
                     @click="editMode = false"
                     v-if="editMode && !isNew"
                 >
