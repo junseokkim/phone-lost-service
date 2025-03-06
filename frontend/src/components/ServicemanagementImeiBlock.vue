@@ -46,14 +46,7 @@
                     text
                     @click="save"
                 >
-                    IMEI 차단 해제
-                </v-btn>
-                <v-btn
-                    color="primary"
-                    text
-                    @click="save"
-                >
-                    IMEI 차단
+                저장
                 </v-btn>
                 <v-btn
                     color="primary"

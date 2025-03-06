@@ -25,5 +25,41 @@ public class PolicyHandler {
 
     @StreamListener(KafkaProcessor.INPUT)
     public void whatever(@Payload String eventString) {}
+
+    @StreamListener(
+        value = KafkaProcessor.INPUT,
+        condition = "headers['type']=='DeviceStatusChangedToLost'"
+    )
+    public void wheneverDeviceStatusChangedToLost_BlockOnLost(
+        @Payload DeviceStatusChangedToLost deviceStatusChangedToLost
+    ) {
+        DeviceStatusChangedToLost event = deviceStatusChangedToLost;
+        System.out.println(
+            "\n\n##### listener BlockOnLost : " +
+            deviceStatusChangedToLost +
+            "\n\n"
+        );
+
+        // Sample Logic //
+        ImeiBlock.blockOnLost(event);
+    }
+
+    @StreamListener(
+        value = KafkaProcessor.INPUT,
+        condition = "headers['type']=='DeviceStatusChangedToNormal'"
+    )
+    public void wheneverDeviceStatusChangedToNormal_BlockOnNormal(
+        @Payload DeviceStatusChangedToNormal deviceStatusChangedToNormal
+    ) {
+        DeviceStatusChangedToNormal event = deviceStatusChangedToNormal;
+        System.out.println(
+            "\n\n##### listener BlockOnNormal : " +
+            deviceStatusChangedToNormal +
+            "\n\n"
+        );
+
+        // Sample Logic //
+        ImeiBlock.blockOnNormal(event);
+    }
 }
 //>>> Clean Arch / Inbound Adaptor

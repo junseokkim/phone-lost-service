@@ -29,20 +29,74 @@ public class ImeiBlock {
 
     private Date blockedAt;
 
-    @PostPersist
-    public void onPostPersist() {
-        ImeiBlocked imeiBlocked = new ImeiBlocked(this);
-        imeiBlocked.publishAfterCommit();
-
-        ImeiUnblocked imeiUnblocked = new ImeiUnblocked(this);
-        imeiUnblocked.publishAfterCommit();
-    }
-
     public static ImeiBlockRepository repository() {
         ImeiBlockRepository imeiBlockRepository = ServicemanagementApplication.applicationContext.getBean(
             ImeiBlockRepository.class
         );
         return imeiBlockRepository;
     }
+
+    //<<< Clean Arch / Port Method
+    public static void blockOnLost(
+        DeviceStatusChangedToLost deviceStatusChangedToLost
+    ) {
+        //implement business logic here:
+
+        /** Example 1:  new item 
+        ImeiBlock imeiBlock = new ImeiBlock();
+        repository().save(imeiBlock);
+
+        ImeiBlocked imeiBlocked = new ImeiBlocked(imeiBlock);
+        imeiBlocked.publishAfterCommit();
+        */
+
+        /** Example 2:  finding and process
+        
+
+        repository().findById(deviceStatusChangedToLost.get???()).ifPresent(imeiBlock->{
+            
+            imeiBlock // do something
+            repository().save(imeiBlock);
+
+            ImeiBlocked imeiBlocked = new ImeiBlocked(imeiBlock);
+            imeiBlocked.publishAfterCommit();
+
+         });
+        */
+
+    }
+
+    //>>> Clean Arch / Port Method
+    //<<< Clean Arch / Port Method
+    public static void blockOnNormal(
+        DeviceStatusChangedToNormal deviceStatusChangedToNormal
+    ) {
+        //implement business logic here:
+
+        /** Example 1:  new item 
+        ImeiBlock imeiBlock = new ImeiBlock();
+        repository().save(imeiBlock);
+
+        ImeiUnblocked imeiUnblocked = new ImeiUnblocked(imeiBlock);
+        imeiUnblocked.publishAfterCommit();
+        */
+
+        /** Example 2:  finding and process
+        
+
+        repository().findById(deviceStatusChangedToNormal.get???()).ifPresent(imeiBlock->{
+            
+            imeiBlock // do something
+            repository().save(imeiBlock);
+
+            ImeiUnblocked imeiUnblocked = new ImeiUnblocked(imeiBlock);
+            imeiUnblocked.publishAfterCommit();
+
+         });
+        */
+
+    }
+    //>>> Clean Arch / Port Method
+
 }
 //>>> DDD / Aggregate Root

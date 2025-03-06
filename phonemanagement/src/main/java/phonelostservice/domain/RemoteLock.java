@@ -9,7 +9,7 @@ import javax.persistence.*;
 import lombok.Data;
 import phonelostservice.PhonemanagementApplication;
 import phonelostservice.domain.DeviceLockedRemotely;
-import phonelostservice.domain.DeviceResetRemotely;
+import phonelostservice.domain.DeviceUnlockRemotely;
 
 @Entity
 @Table(name = "RemoteLock_table")
@@ -34,8 +34,10 @@ public class RemoteLock {
         );
         deviceLockedRemotely.publishAfterCommit();
 
-        DeviceResetRemotely deviceResetRemotely = new DeviceResetRemotely(this);
-        deviceResetRemotely.publishAfterCommit();
+        DeviceUnlockRemotely deviceUnlockRemotely = new DeviceUnlockRemotely(
+            this
+        );
+        deviceUnlockRemotely.publishAfterCommit();
     }
 
     public static RemoteLockRepository repository() {
