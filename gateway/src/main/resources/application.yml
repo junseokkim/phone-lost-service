@@ -12,7 +12,7 @@ spring:
         - id: lostphonereport
           uri: http://localhost:8082
           predicates:
-            - Path=/lostPhoneReports/**, 
+            - Path=/lostPhoneReports/**, /inquiryLostReports/**
         - id: phonemanagement
           uri: http://localhost:8083
           predicates:
@@ -32,7 +32,7 @@ spring:
         - id: servicemanagement
           uri: http://localhost:8087
           predicates:
-            - Path=/imeiBlocks/**, /usimBlocks/**, 
+            - Path=/imeiBlocks/**, /usimBlocks/**, /본인기기Imei차단정보조회/**, /통신서비스차단정보조회/**
         - id: frontend
           uri: http://localhost:8080
           predicates:

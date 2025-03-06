@@ -8,6 +8,8 @@ import java.util.Map;
 import javax.persistence.*;
 import lombok.Data;
 import phonelostservice.DevicerecoveryApplication;
+import phonelostservice.domain.DeviceFound;
+import phonelostservice.domain.DeviceRecoveredToNormal;
 
 @Entity
 @Table(name = "Recovery_table")
@@ -26,6 +28,17 @@ public class Recovery {
     private Date recoveredAt;
 
     private String status;
+
+    @PostPersist
+    public void onPostPersist() {
+        DeviceFound deviceFound = new DeviceFound(this);
+        deviceFound.publishAfterCommit();
+
+        DeviceRecoveredToNormal deviceRecoveredToNormal = new DeviceRecoveredToNormal(
+            this
+        );
+        deviceRecoveredToNormal.publishAfterCommit();
+    }
 
     public static RecoveryRepository repository() {
         RecoveryRepository recoveryRepository = DevicerecoveryApplication.applicationContext.getBean(
