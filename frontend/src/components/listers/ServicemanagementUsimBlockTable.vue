@@ -64,9 +64,6 @@
                     { text: "deviceId", value: "deviceId" },
                     { text: "status", value: "status" },
                     { text: "blockedAt", value: "blockedAt" },
-                    { text: "deviceId", value: "deviceId" },
-                    { text: "status", value: "status" },
-                    { text: "blockedAt", value: "blockedAt" },
                 ],
             usimBlock : [],
             newValue: {},
@@ -84,9 +81,6 @@
             this.values = temp.data._embedded.usimblocks;
 
             this.newValue = {
-                'deviceId': 0,
-                'status': '',
-                'blockedAt': '2025-03-06',
                 'deviceId': 0,
                 'status': '',
                 'blockedAt': '2025-03-06',

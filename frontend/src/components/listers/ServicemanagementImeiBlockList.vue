@@ -45,18 +45,10 @@
                             
                             
                             
-                            
-                            
-                            
-                            
                         </v-list-item-title>
 
                         <v-list-item-subtitle style="font-size:25px; font-weight:700;">
                             [ Id :  {{data.id }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            [ DeviceId :  {{data.deviceId }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            [ ImeiNumber :  {{data.imeiNumber }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            [ Status :  {{data.status }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            [ BlockedAt :  {{data.blockedAt }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             [ DeviceId :  {{data.deviceId }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             [ ImeiNumber :  {{data.imeiNumber }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             [ Status :  {{data.status }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -120,10 +112,6 @@
             this.values = temp.data._embedded.imeiblocks;
             
             this.newValue = {
-                'deviceId': 0,
-                'imeiNumber': '',
-                'status': '',
-                'blockedAt': '2025-03-06',
                 'deviceId': 0,
                 'imeiNumber': '',
                 'status': '',

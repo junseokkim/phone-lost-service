@@ -14,10 +14,6 @@ public class DeviceResetRemotely extends AbstractEvent {
     private Long id;
     private String status;
     private Date lockedAt;
-    private String status;
-    private Date lockedAt;
-    private String status;
-    private Date lockedAt;
 
     public DeviceResetRemotely(RemoteLock aggregate) {
         super(aggregate);

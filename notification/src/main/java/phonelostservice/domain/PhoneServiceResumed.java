@@ -10,4 +10,6 @@ import phonelostservice.infra.AbstractEvent;
 public class PhoneServiceResumed extends AbstractEvent {
 
     private Long id;
+    private String status;
+    private Date blockedAt;
 }

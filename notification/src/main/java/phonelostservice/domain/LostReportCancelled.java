@@ -10,4 +10,5 @@ import phonelostservice.infra.AbstractEvent;
 public class LostReportCancelled extends AbstractEvent {
 
     private Long id;
+    private String status;
 }

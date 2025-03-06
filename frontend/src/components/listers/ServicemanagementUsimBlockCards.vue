@@ -104,9 +104,6 @@
                 'deviceId': 0,
                 'status': '',
                 'blockedAt': '2025-03-06',
-                'deviceId': 0,
-                'status': '',
-                'blockedAt': '2025-03-06',
             }
         },
         methods:{

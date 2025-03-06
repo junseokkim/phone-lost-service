@@ -58,8 +58,8 @@ mvn spring-boot:run
 ```
 - servicemanagement
 ```
- http :8088/imeiBlocks id="id"deviceId="deviceId"imeiNumber="imeiNumber"status="status"blockedAt="blockedAt"deviceId="deviceId"imeiNumber="imeiNumber"status="status"blockedAt="blockedAt"
- http :8088/usimBlocks id="id"deviceId="deviceId"status="status"blockedAt="blockedAt"deviceId="deviceId"status="status"blockedAt="blockedAt"
+ http :8088/imeiBlocks id="id"deviceId="deviceId"imeiNumber="imeiNumber"status="status"blockedAt="blockedAt"
+ http :8088/usimBlocks id="id"deviceId="deviceId"status="status"blockedAt="blockedAt"
 ```
 
 

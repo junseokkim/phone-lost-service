@@ -14,8 +14,4 @@ public class LostReportReceived extends AbstractEvent {
     private Long deviceId;
     private String status;
     private Date reportedAt;
-    private Long userId;
-    private Long deviceId;
-    private String status;
-    private Date reportedAt;
 }

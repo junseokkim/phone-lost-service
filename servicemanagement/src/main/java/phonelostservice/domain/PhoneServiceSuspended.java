@@ -12,6 +12,9 @@ import phonelostservice.infra.AbstractEvent;
 public class PhoneServiceSuspended extends AbstractEvent {
 
     private Long id;
+    private Long deviceId;
+    private String status;
+    private Date blockedAt;
 
     public PhoneServiceSuspended(UsimBlock aggregate) {
         super(aggregate);

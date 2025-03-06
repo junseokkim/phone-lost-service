@@ -12,12 +12,8 @@ import phonelostservice.infra.AbstractEvent;
 public class DeviceLockedRemotely extends AbstractEvent {
 
     private Long id;
-    private String status;
     private Date lockedAt;
     private String status;
-    private Date lockedAt;
-    private String status;
-    private Date lockedAt;
 
     public DeviceLockedRemotely(RemoteLock aggregate) {
         super(aggregate);

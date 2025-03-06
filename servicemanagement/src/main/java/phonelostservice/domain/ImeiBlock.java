@@ -29,14 +29,6 @@ public class ImeiBlock {
 
     private Date blockedAt;
 
-    private Long deviceId;
-
-    private String imeiNumber;
-
-    private String status;
-
-    private Date blockedAt;
-
     @PostPersist
     public void onPostPersist() {
         ImeiBlocked imeiBlocked = new ImeiBlocked(this);

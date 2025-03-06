@@ -12,6 +12,10 @@ import phonelostservice.infra.AbstractEvent;
 public class ImeiBlocked extends AbstractEvent {
 
     private Long id;
+    private Long deviceId;
+    private String imeiNumber;
+    private String status;
+    private Date blockedAt;
 
     public ImeiBlocked(ImeiBlock aggregate) {
         super(aggregate);

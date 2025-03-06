@@ -17,18 +17,6 @@
             <div>
                 <Date label="BlockedAt" v-model="item.blockedAt" :editMode="editMode" @change="change" />
             </div>
-            <div>
-                <Number label="DeviceId" v-model="item.deviceId" :editMode="editMode" @change="change" />
-            </div>
-            <div>
-                <String label="ImeiNumber" v-model="item.imeiNumber" :editMode="editMode" @change="change" />
-            </div>
-            <div>
-                <String label="Status" v-model="item.status" :editMode="editMode" @change="change" />
-            </div>
-            <div>
-                <Date label="BlockedAt" v-model="item.blockedAt" :editMode="editMode" @change="change" />
-            </div>
         </v-card-text>
 
         <v-card-actions>
