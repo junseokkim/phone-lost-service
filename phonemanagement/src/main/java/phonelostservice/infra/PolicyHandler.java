@@ -25,5 +25,41 @@ public class PolicyHandler {
 
     @StreamListener(KafkaProcessor.INPUT)
     public void whatever(@Payload String eventString) {}
+
+    @StreamListener(
+        value = KafkaProcessor.INPUT,
+        condition = "headers['type']=='LostReportReceived'"
+    )
+    public void wheneverLostReportReceived_ChangeDeviceStatusLost(
+        @Payload LostReportReceived lostReportReceived
+    ) {
+        LostReportReceived event = lostReportReceived;
+        System.out.println(
+            "\n\n##### listener ChangeDeviceStatusLost : " +
+            lostReportReceived +
+            "\n\n"
+        );
+
+        // Sample Logic //
+        Device.changeDeviceStatusLost(event);
+    }
+
+    @StreamListener(
+        value = KafkaProcessor.INPUT,
+        condition = "headers['type']=='LostReportCancelled'"
+    )
+    public void wheneverLostReportCancelled_ChangeDeviceStatusNormal(
+        @Payload LostReportCancelled lostReportCancelled
+    ) {
+        LostReportCancelled event = lostReportCancelled;
+        System.out.println(
+            "\n\n##### listener ChangeDeviceStatusNormal : " +
+            lostReportCancelled +
+            "\n\n"
+        );
+
+        // Sample Logic //
+        Device.changeDeviceStatusNormal(event);
+    }
 }
 //>>> Clean Arch / Inbound Adaptor

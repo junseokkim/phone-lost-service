@@ -48,7 +48,6 @@ logging:
 api:
   url: 
     lostphonereport: localhost:8082 
-    phonemanagement: localhost:8083 
     
 
 server:
@@ -89,6 +88,5 @@ spring:
 api:
   url: 
     lostphonereport: lostphonereport:8080 
-    phonemanagement: phonemanagement:8080 
     
 
