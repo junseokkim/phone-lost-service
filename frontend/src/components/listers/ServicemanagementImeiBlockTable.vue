@@ -65,10 +65,6 @@
                     { text: "imeiNumber", value: "imeiNumber" },
                     { text: "status", value: "status" },
                     { text: "blockedAt", value: "blockedAt" },
-                    { text: "deviceId", value: "deviceId" },
-                    { text: "imeiNumber", value: "imeiNumber" },
-                    { text: "status", value: "status" },
-                    { text: "blockedAt", value: "blockedAt" },
                 ],
             imeiBlock : [],
             newValue: {},
@@ -86,10 +82,6 @@
             this.values = temp.data._embedded.imeiblocks;
 
             this.newValue = {
-                'deviceId': 0,
-                'imeiNumber': '',
-                'status': '',
-                'blockedAt': '2025-03-06',
                 'deviceId': 0,
                 'imeiNumber': '',
                 'status': '',

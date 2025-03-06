@@ -27,12 +27,6 @@ public class UsimBlock {
 
     private Date blockedAt;
 
-    private Long deviceId;
-
-    private String status;
-
-    private Date blockedAt;
-
     @PostPersist
     public void onPostPersist() {
         PhoneServiceSuspended phoneServiceSuspended = new PhoneServiceSuspended(

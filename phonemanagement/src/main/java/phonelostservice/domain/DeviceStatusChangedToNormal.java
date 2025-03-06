@@ -14,10 +14,6 @@ public class DeviceStatusChangedToNormal extends AbstractEvent {
     private Long id;
     private String status;
     private Date updatedAt;
-    private String status;
-    private Date updatedAt;
-    private String status;
-    private Date updatedAt;
 
     public DeviceStatusChangedToNormal(Device aggregate) {
         super(aggregate);

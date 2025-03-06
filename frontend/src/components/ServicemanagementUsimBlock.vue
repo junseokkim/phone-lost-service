@@ -19,9 +19,6 @@
             <Number label="DeviceId" v-model="value.deviceId" :editMode="editMode" :inputUI="''"/>
             <String label="Status" v-model="value.status" :editMode="editMode" :inputUI="''"/>
             <Date label="BlockedAt" v-model="value.blockedAt" :editMode="editMode" :inputUI="''"/>
-            <Number label="DeviceId" v-model="value.deviceId" :editMode="editMode" :inputUI="''"/>
-            <String label="Status" v-model="value.status" :editMode="editMode" :inputUI="''"/>
-            <Date label="BlockedAt" v-model="value.blockedAt" :editMode="editMode" :inputUI="''"/>
         </v-card-text>
 
         <v-card-actions style="background-color: white;">

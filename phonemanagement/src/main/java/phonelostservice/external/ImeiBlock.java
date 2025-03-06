@@ -11,8 +11,4 @@ public class ImeiBlock {
     private String imeiNumber;
     private String status;
     private Date blockedAt;
-    private Long deviceId;
-    private String imeiNumber;
-    private String status;
-    private Date blockedAt;
 }
