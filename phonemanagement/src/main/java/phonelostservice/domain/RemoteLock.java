@@ -27,24 +27,74 @@ public class RemoteLock {
 
     private Date lockedAt;
 
-    @PostPersist
-    public void onPostPersist() {
-        DeviceLockedRemotely deviceLockedRemotely = new DeviceLockedRemotely(
-            this
-        );
-        deviceLockedRemotely.publishAfterCommit();
-
-        DeviceUnlockRemotely deviceUnlockRemotely = new DeviceUnlockRemotely(
-            this
-        );
-        deviceUnlockRemotely.publishAfterCommit();
-    }
-
     public static RemoteLockRepository repository() {
         RemoteLockRepository remoteLockRepository = PhonemanagementApplication.applicationContext.getBean(
             RemoteLockRepository.class
         );
         return remoteLockRepository;
     }
+
+    //<<< Clean Arch / Port Method
+    public static void requestRemoteLock(
+        DeviceStatusChangedToLost deviceStatusChangedToLost
+    ) {
+        //implement business logic here:
+
+        /** Example 1:  new item 
+        RemoteLock remoteLock = new RemoteLock();
+        repository().save(remoteLock);
+
+        DeviceLockedRemotely deviceLockedRemotely = new DeviceLockedRemotely(remoteLock);
+        deviceLockedRemotely.publishAfterCommit();
+        */
+
+        /** Example 2:  finding and process
+        
+
+        repository().findById(deviceStatusChangedToLost.get???()).ifPresent(remoteLock->{
+            
+            remoteLock // do something
+            repository().save(remoteLock);
+
+            DeviceLockedRemotely deviceLockedRemotely = new DeviceLockedRemotely(remoteLock);
+            deviceLockedRemotely.publishAfterCommit();
+
+         });
+        */
+
+    }
+
+    //>>> Clean Arch / Port Method
+    //<<< Clean Arch / Port Method
+    public static void requestRemoteUnlock(
+        DeviceStatusChangedToNormal deviceStatusChangedToNormal
+    ) {
+        //implement business logic here:
+
+        /** Example 1:  new item 
+        RemoteLock remoteLock = new RemoteLock();
+        repository().save(remoteLock);
+
+        DeviceUnlockRemotely deviceUnlockRemotely = new DeviceUnlockRemotely(remoteLock);
+        deviceUnlockRemotely.publishAfterCommit();
+        */
+
+        /** Example 2:  finding and process
+        
+
+        repository().findById(deviceStatusChangedToNormal.get???()).ifPresent(remoteLock->{
+            
+            remoteLock // do something
+            repository().save(remoteLock);
+
+            DeviceUnlockRemotely deviceUnlockRemotely = new DeviceUnlockRemotely(remoteLock);
+            deviceUnlockRemotely.publishAfterCommit();
+
+         });
+        */
+
+    }
+    //>>> Clean Arch / Port Method
+
 }
 //>>> DDD / Aggregate Root

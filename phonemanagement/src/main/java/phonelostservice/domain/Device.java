@@ -39,28 +39,10 @@ public class Device {
         DeviceRegistered deviceRegistered = new DeviceRegistered(this);
         deviceRegistered.publishAfterCommit();
 
-        //Following code causes dependency to external APIs
-        // it is NOT A GOOD PRACTICE. instead, Event-Policy mapping is recommended.
-
-        phonelostservice.external.RemoteLock remoteLock = new phonelostservice.external.RemoteLock();
-        // mappings goes here
-        PhonemanagementApplication.applicationContext
-            .getBean(phonelostservice.external.RemoteLockService.class)
-            .requestRemoteLock(remoteLock);
-
         DeviceStatusChangedToLost deviceStatusChangedToLost = new DeviceStatusChangedToLost(
             this
         );
         deviceStatusChangedToLost.publishAfterCommit();
-
-        //Following code causes dependency to external APIs
-        // it is NOT A GOOD PRACTICE. instead, Event-Policy mapping is recommended.
-
-        phonelostservice.external.RemoteLock remoteLock = new phonelostservice.external.RemoteLock();
-        // mappings goes here
-        PhonemanagementApplication.applicationContext
-            .getBean(phonelostservice.external.RemoteLockService.class)
-            .requestRemoteUnlock(remoteLock);
 
         DeviceStatusChangedToNormal deviceStatusChangedToNormal = new DeviceStatusChangedToNormal(
             this

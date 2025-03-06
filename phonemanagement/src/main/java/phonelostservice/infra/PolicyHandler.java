@@ -61,5 +61,41 @@ public class PolicyHandler {
         // Sample Logic //
         Device.changeDeviceStatusNormal(event);
     }
+
+    @StreamListener(
+        value = KafkaProcessor.INPUT,
+        condition = "headers['type']=='DeviceStatusChangedToLost'"
+    )
+    public void wheneverDeviceStatusChangedToLost_RequestRemoteLock(
+        @Payload DeviceStatusChangedToLost deviceStatusChangedToLost
+    ) {
+        DeviceStatusChangedToLost event = deviceStatusChangedToLost;
+        System.out.println(
+            "\n\n##### listener RequestRemoteLock : " +
+            deviceStatusChangedToLost +
+            "\n\n"
+        );
+
+        // Sample Logic //
+        RemoteLock.requestRemoteLock(event);
+    }
+
+    @StreamListener(
+        value = KafkaProcessor.INPUT,
+        condition = "headers['type']=='DeviceStatusChangedToNormal'"
+    )
+    public void wheneverDeviceStatusChangedToNormal_RequestRemoteUnlock(
+        @Payload DeviceStatusChangedToNormal deviceStatusChangedToNormal
+    ) {
+        DeviceStatusChangedToNormal event = deviceStatusChangedToNormal;
+        System.out.println(
+            "\n\n##### listener RequestRemoteUnlock : " +
+            deviceStatusChangedToNormal +
+            "\n\n"
+        );
+
+        // Sample Logic //
+        RemoteLock.requestRemoteUnlock(event);
+    }
 }
 //>>> Clean Arch / Inbound Adaptor

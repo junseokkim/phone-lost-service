@@ -20,12 +20,6 @@ import InqurySelfPhoneViewDetail from "./components/InqurySelfPhoneViewDetail"
 import NotificationNotificationManager from "./components/listers/NotificationNotificationCards"
 import NotificationNotificationDetail from "./components/listers/NotificationNotificationDetail"
 
-import DevicerecoveryRecoveryManager from "./components/listers/DevicerecoveryRecoveryCards"
-import DevicerecoveryRecoveryDetail from "./components/listers/DevicerecoveryRecoveryDetail"
-
-import PhonerentalRentalManager from "./components/listers/PhonerentalRentalCards"
-import PhonerentalRentalDetail from "./components/listers/PhonerentalRentalDetail"
-
 import ServicemanagementImeiBlockManager from "./components/listers/ServicemanagementImeiBlockCards"
 import ServicemanagementImeiBlockDetail from "./components/listers/ServicemanagementImeiBlockDetail"
 import ServicemanagementUsimBlockManager from "./components/listers/ServicemanagementUsimBlockCards"
@@ -101,28 +95,6 @@ export default new Router({
                 path: '/notifications/notifications/:id',
                 name: 'NotificationNotificationDetail',
                 component: NotificationNotificationDetail
-            },
-
-            {
-                path: '/devicerecoveries/recoveries',
-                name: 'DevicerecoveryRecoveryManager',
-                component: DevicerecoveryRecoveryManager
-            },
-            {
-                path: '/devicerecoveries/recoveries/:id',
-                name: 'DevicerecoveryRecoveryDetail',
-                component: DevicerecoveryRecoveryDetail
-            },
-
-            {
-                path: '/phonerentals/rentals',
-                name: 'PhonerentalRentalManager',
-                component: PhonerentalRentalManager
-            },
-            {
-                path: '/phonerentals/rentals/:id',
-                name: 'PhonerentalRentalDetail',
-                component: PhonerentalRentalDetail
             },
 
             {

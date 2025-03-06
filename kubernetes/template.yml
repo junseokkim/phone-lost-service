@@ -123,86 +123,6 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: devicerecovery
-  labels:
-    app: devicerecovery
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: devicerecovery
-  template:
-    metadata:
-      labels:
-        app: devicerecovery
-    spec:
-      containers:
-        - name: devicerecovery
-          image: username/devicerecovery:latest
-          ports:
-            - containerPort: 8080
-          readinessProbe:
-            httpGet:
-              path: '/actuator/health'
-              port: 8080
-            initialDelaySeconds: 10
-            timeoutSeconds: 2
-            periodSeconds: 5
-            failureThreshold: 10
-          livenessProbe:
-            httpGet:
-              path: '/actuator/health'
-              port: 8080
-            initialDelaySeconds: 120
-            timeoutSeconds: 2
-            periodSeconds: 5
-            failureThreshold: 5
-
----
-
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: phonerental
-  labels:
-    app: phonerental
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: phonerental
-  template:
-    metadata:
-      labels:
-        app: phonerental
-    spec:
-      containers:
-        - name: phonerental
-          image: username/phonerental:latest
-          ports:
-            - containerPort: 8080
-          readinessProbe:
-            httpGet:
-              path: '/actuator/health'
-              port: 8080
-            initialDelaySeconds: 10
-            timeoutSeconds: 2
-            periodSeconds: 5
-            failureThreshold: 10
-          livenessProbe:
-            httpGet:
-              path: '/actuator/health'
-              port: 8080
-            initialDelaySeconds: 120
-            timeoutSeconds: 2
-            periodSeconds: 5
-            failureThreshold: 5
-
----
-
-apiVersion: apps/v1
-kind: Deployment
-metadata:
   name: servicemanagement
   labels:
     app: servicemanagement
@@ -288,40 +208,6 @@ spec:
       targetPort: 8080
   selector:
     app: notification
-
-
----
-
-
-apiVersion: v1
-kind: Service
-metadata:
-  name: devicerecovery
-  labels:
-    app: devicerecovery
-spec:
-  ports:
-    - port: 8080
-      targetPort: 8080
-  selector:
-    app: devicerecovery
-
-
----
-
-
-apiVersion: v1
-kind: Service
-metadata:
-  name: phonerental
-  labels:
-    app: phonerental
-spec:
-  ports:
-    - port: 8080
-      targetPort: 8080
-  selector:
-    app: phonerental
 
 
 ---

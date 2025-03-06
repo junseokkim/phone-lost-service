@@ -94,26 +94,6 @@
                     </v-list-item>
                     <v-list-item
                         class="px-2"
-                        key="recoveries"
-                        to="/devicerecoveries/recoveries"
-                        @click="changeUrl()"
-                        color="primary"
-                        style="font-weight:700;"
-                    >
-                        기기 복구
-                    </v-list-item>
-                    <v-list-item
-                        class="px-2"
-                        key="rentals"
-                        to="/phonerentals/rentals"
-                        @click="changeUrl()"
-                        color="primary"
-                        style="font-weight:700;"
-                    >
-                        임시 기기 대여
-                    </v-list-item>
-                    <v-list-item
-                        class="px-2"
                         key="imeiBlocks"
                         to="/servicemanagements/imeiBlocks"
                         @click="changeUrl()"
@@ -233,20 +213,6 @@ export default {
                 description: 'notification을 관리하는 화면입니다.', 
                 key: 'notifications', 
                 route: '/notifications/notifications',
-                ImageUrl: '',
-            },
-            { 
-                title: '기기 복구', 
-                description: 'Recovery을 관리하는 화면입니다.', 
-                key: 'recoveries', 
-                route: '/devicerecoveries/recoveries',
-                ImageUrl: '',
-            },
-            { 
-                title: '임시 기기 대여', 
-                description: 'Rental을 관리하는 화면입니다.', 
-                key: 'rentals', 
-                route: '/phonerentals/rentals',
                 ImageUrl: '',
             },
             { 
