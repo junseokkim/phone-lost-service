@@ -32,8 +32,6 @@ jobs:
           mvn clean package -f ./lostphonereport/pom.xml
           mvn clean package -f ./phonemanagement/pom.xml
           mvn clean package -f ./notification/pom.xml
-          mvn clean package -f ./devicerecovery/pom.xml
-          mvn clean package -f ./phonerental/pom.xml
           mvn clean package -f ./servicemanagement/pom.xml
 
       - name: Docker Build and push for Lostphonereport
@@ -65,26 +63,6 @@ jobs:
           tags: |
             ghcr.io/${{ github.repository }}/notification:latest
             ghcr.io/${{ github.repository }}/notification:${{ github.ref_name }}
-            
-      - name: Docker Build and push for Devicerecovery
-        uses: docker/build-push-action@v4
-        with:
-          context: ./devicerecovery
-          platforms: linux/amd64,linux/arm64
-          push: true
-          tags: |
-            ghcr.io/${{ github.repository }}/devicerecovery:latest
-            ghcr.io/${{ github.repository }}/devicerecovery:${{ github.ref_name }}
-            
-      - name: Docker Build and push for Phonerental
-        uses: docker/build-push-action@v4
-        with:
-          context: ./phonerental
-          platforms: linux/amd64,linux/arm64
-          push: true
-          tags: |
-            ghcr.io/${{ github.repository }}/phonerental:latest
-            ghcr.io/${{ github.repository }}/phonerental:${{ github.ref_name }}
             
       - name: Docker Build and push for Servicemanagement
         uses: docker/build-push-action@v4

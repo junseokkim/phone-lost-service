@@ -21,16 +21,8 @@ spring:
           uri: http://localhost:8084
           predicates:
             - Path=/notifications/**, 
-        - id: devicerecovery
-          uri: http://localhost:8085
-          predicates:
-            - Path=/recoveries/**, 
-        - id: phonerental
-          uri: http://localhost:8086
-          predicates:
-            - Path=/rentals/**, 
         - id: servicemanagement
-          uri: http://localhost:8087
+          uri: http://localhost:8085
           predicates:
             - Path=/imeiBlocks/**, /usimBlocks/**, /본인기기Imei차단정보조회/**, /통신서비스차단정보조회/**
         - id: frontend
@@ -69,14 +61,6 @@ spring:
           uri: http://notification:8080
           predicates:
             - Path=/notifications/**, 
-        - id: devicerecovery
-          uri: http://devicerecovery:8080
-          predicates:
-            - Path=/recoveries/**, 
-        - id: phonerental
-          uri: http://phonerental:8080
-          predicates:
-            - Path=/rentals/**, 
         - id: servicemanagement
           uri: http://servicemanagement:8080
           predicates:

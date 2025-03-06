@@ -23,8 +23,6 @@ See the README.md files inside the each microservices directory:
 - lostphonereport
 - phonemanagement
 - notification
-- devicerecovery
-- phonerental
 - servicemanagement
 
 
@@ -47,14 +45,6 @@ mvn spring-boot:run
 - notification
 ```
  http :8088/notifications id="id"userId="userId"message="message"status="status"sentAt="sentAt"
-```
-- devicerecovery
-```
- http :8088/recoveries id="id"userId="userId"deviceId="deviceId"recoveredAt="recoveredAt"status="status"
-```
-- phonerental
-```
- http :8088/rentals id="id"userId="userId"deviceModel="deviceModel"status="status"rentalStartDate="rentalStartDate"expectedReturnDate="expectedReturnDate"
 ```
 - servicemanagement
 ```

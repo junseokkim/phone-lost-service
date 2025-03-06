@@ -52,10 +52,6 @@ pluralCaseList.push( {plural: "phonemanagements/remoteLocks", pascal: "Phonemana
 
 pluralCaseList.push( {plural: "notifications/notifications", pascal: "NotificationNotification"} )
 
-pluralCaseList.push( {plural: "devicerecoveries/recoveries", pascal: "DevicerecoveryRecovery"} )
-
-pluralCaseList.push( {plural: "phonerentals/rentals", pascal: "PhonerentalRental"} )
-
 pluralCaseList.push( {plural: "servicemanagements/imeiBlocks", pascal: "ServicemanagementImeiBlock"} )
 pluralCaseList.push( {plural: "servicemanagements/usimBlocks", pascal: "ServicemanagementUsimBlock"} )
 
