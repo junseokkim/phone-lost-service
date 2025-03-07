@@ -70,20 +70,19 @@ public class Device {
         DeviceStatusChangedToLost deviceStatusChangedToLost = new DeviceStatusChangedToLost(device);
         deviceStatusChangedToLost.publishAfterCommit();
         */
-
-        /** Example 2:  finding and process
         
 
-        repository().findById(lostReportReceived.get???()).ifPresent(device->{
+        repository().findById(lostReportReceived.getDeviceId()).ifPresent(device->{
             
-            device // do something
+            device.setStatus("LOST");
+            device.setLocked(true);
+            device.setUpdatedAt(new Date());
             repository().save(device);
 
             DeviceStatusChangedToLost deviceStatusChangedToLost = new DeviceStatusChangedToLost(device);
             deviceStatusChangedToLost.publishAfterCommit();
 
          });
-        */
 
     }
 
