@@ -56,6 +56,7 @@ pluralCaseList.push( {plural: "servicemanagements/imeiBlocks", pascal: "Servicem
 pluralCaseList.push( {plural: "servicemanagements/usimBlocks", pascal: "ServicemanagementUsimBlock"} )
 
 
+
 Vue.prototype.$ManagerLists.forEach(function(item, idx) {
   pluralCaseList.forEach(function(tmp) {
     if(item.toLowerCase() == tmp.pascal.toLowerCase()) {

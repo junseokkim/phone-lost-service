@@ -83,7 +83,7 @@
             this.newValue = {
                 'deviceId': 0,
                 'status': '',
-                'lockedAt': '2025-03-06',
+                'lockedAt': '2025-03-07',
             }
         },
         methods: {
