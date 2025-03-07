@@ -44,16 +44,6 @@
                     </v-list-item>
                     <v-list-item
                         class="px-2"
-                        key="inquiryLostReports"
-                        to="/lostphonereports/inquiryLostReports"
-                        @click="changeUrl()"
-                        color="primary"
-                        style="font-weight:700;"
-                    >
-                        분실 신고 상태 조회
-                    </v-list-item>
-                    <v-list-item
-                        class="px-2"
                         key="devices"
                         to="/phonemanagements/devices"
                         @click="changeUrl()"
@@ -131,6 +121,16 @@
                         style="font-weight:700;"
                     >
                         통신서비스차단정보조회
+                    </v-list-item>
+                    <v-list-item
+                        class="px-2"
+                        key="lostReportPages"
+                        to="/customercenters/lostReportPages"
+                        @click="changeUrl()"
+                        color="primary"
+                        style="font-weight:700;"
+                    >
+                        LostReportPage
                     </v-list-item>
                 </v-list>
             </v-navigation-drawer>
@@ -230,13 +230,6 @@ export default {
                 ImageUrl: '',
             },
             { 
-                title: '분실 신고 상태 조회', 
-                description: 'InquiryLostReport을 관리하는 화면입니다.', 
-                key: 'inquiryLostReports', 
-                route: '/lostphonereports/inquiryLostReports',
-                ImageUrl: '',
-            },
-            { 
                 title: '본인 폰 조회', 
                 description: 'InqurySelfPhone을 관리하는 화면입니다.', 
                 key: 'inqurySelfPhones', 
@@ -255,6 +248,13 @@ export default {
                 description: '통신 서비스 차단 정보 조회을 관리하는 화면입니다.', 
                 key: '통신서비스차단정보조회', 
                 route: '/servicemanagements/통신서비스차단정보조회',
+                ImageUrl: '',
+            },
+            { 
+                title: 'LostReportPage', 
+                description: 'LostReportPage을 관리하는 화면입니다.', 
+                key: 'lostReportPages', 
+                route: '/customercenters/lostReportPages',
                 ImageUrl: '',
             },
             

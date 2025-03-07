@@ -8,8 +8,6 @@ Vue.use(Router);
 import LostphonereportLostPhoneReportManager from "./components/listers/LostphonereportLostPhoneReportCards"
 import LostphonereportLostPhoneReportDetail from "./components/listers/LostphonereportLostPhoneReportDetail"
 
-import InquiryLostReportView from "./components/InquiryLostReportView"
-import InquiryLostReportViewDetail from "./components/InquiryLostReportViewDetail"
 import PhonemanagementDeviceManager from "./components/listers/PhonemanagementDeviceCards"
 import PhonemanagementDeviceDetail from "./components/listers/PhonemanagementDeviceDetail"
 import PhonemanagementRemoteLockManager from "./components/listers/PhonemanagementRemoteLockCards"
@@ -30,6 +28,9 @@ import 본인기기Imei차단정보조회ViewDetail from "./components/본인기
 import 통신서비스차단정보조회View from "./components/통신서비스차단정보조회View"
 import 통신서비스차단정보조회ViewDetail from "./components/통신서비스차단정보조회ViewDetail"
 
+import LostReportPageView from "./components/LostReportPageView"
+import LostReportPageViewDetail from "./components/LostReportPageViewDetail"
+
 export default new Router({
     // mode: 'history',
     base: process.env.BASE_URL,
@@ -45,16 +46,6 @@ export default new Router({
                 component: LostphonereportLostPhoneReportDetail
             },
 
-            {
-                path: '/lostphonereports/inquiryLostReports',
-                name: 'InquiryLostReportView',
-                component: InquiryLostReportView
-            },
-            {
-                path: '/lostphonereports/inquiryLostReports/:id',
-                name: 'InquiryLostReportViewDetail',
-                component: InquiryLostReportViewDetail
-            },
             {
                 path: '/phonemanagements/devices',
                 name: 'PhonemanagementDeviceManager',
@@ -137,6 +128,17 @@ export default new Router({
                 path: '/servicemanagements/통신서비스차단정보조회/:id',
                 name: '통신서비스차단정보조회ViewDetail',
                 component: 통신서비스차단정보조회ViewDetail
+            },
+
+            {
+                path: '/customercenters/lostReportPages',
+                name: 'LostReportPageView',
+                component: LostReportPageView
+            },
+            {
+                path: '/customercenters/lostReportPages/:id',
+                name: 'LostReportPageViewDetail',
+                component: LostReportPageViewDetail
             },
 
 

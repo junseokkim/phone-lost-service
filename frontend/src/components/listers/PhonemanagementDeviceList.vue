@@ -120,8 +120,8 @@
                 'model': '',
                 'status': '',
                 'locked': false,
-                'registeredAt': '2025-03-06',
-                'updatedAt': '2025-03-06',
+                'registeredAt': '2025-03-07',
+                'updatedAt': '2025-03-07',
             }
         },
         methods: {
